@@ -30,8 +30,8 @@ def load_socdiff(
     objective="pred_x0",
 ):
     assert isdir(model_dir)
-    fname_model = join(model_dir, f"model_{epoch}.pt")
-    fname_ema = join(model_dir, f"ema_{epoch}.pt")
+    fname_model = join(model_dir, f"model_{epoch-1}.pt")
+    fname_ema = join(model_dir, f"ema_{epoch-1}.pt")
 
     model = MotionModel(
         n_in=n_in, n_frames=n_frames, skel=skel, hidden_dim=hidden_dim
