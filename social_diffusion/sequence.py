@@ -160,6 +160,9 @@ class MultiPersonSequence(Sequence):
         )
         return all_sequences
 
+    def __getitem__(self, index):
+        # return the appropriate item
+        return self.Seq[index]
 
 @nb.njit(
     nb.types.Tuple((nb.float32[:, :], nb.int64[:], nb.int64[:]))(
